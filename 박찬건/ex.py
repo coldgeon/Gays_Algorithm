@@ -1,6 +1,10 @@
 from sys import stdin
 
 stdin = open("input.txt", "rt")
+n = int(stdin.readline().rstrip())
 
-arr = [sorted([ int(stdin.readline().rstrip()) for _ in range(4) ], reverse=True), sorted([int(stdin.readline().rstrip()) for _ in range(2)], reverse=True)]
-print(sum(arr[0][:3])+arr[1][0])
+for _ in range(n):
+    a = 0
+    j = int(stdin.readline().rstrip())
+    a = sum([k*(sum(z for z in range(1, j+1))+1) for k in range(1, j+1)])
+    print(a)
